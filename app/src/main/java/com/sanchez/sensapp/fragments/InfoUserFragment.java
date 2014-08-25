@@ -61,7 +61,7 @@ public class InfoUserFragment extends Fragment {
 			nametv.setText("Nom: " +c.getString(c.getColumnIndex(Helper.User.KEY_NAME)));
 			surnametv.setText("Cognom: " +c.getString(c.getColumnIndex(Helper.User.KEY_SURNAME)));
 			agetv.setText("Edat: " +c.getString(c.getColumnIndex(Helper.User.KEY_AGE)));
-			addresstv.setText("Adreça: " +c.getString(c.getColumnIndex(Helper.User.KEY_ADDRESS)));
+			addresstv.setText("Adresa: " +c.getString(c.getColumnIndex(Helper.User.KEY_ADDRESS)));
 			phonetv.setText("Telefon: " +c.getString(c.getColumnIndex(Helper.User.KEY_PHONE)));
 			emailtv.setText("Email: " +c.getString(c.getColumnIndex(Helper.User.KEY_EMAIL)));
 			notestv.setText("Notes: " +c.getString(c.getColumnIndex(Helper.User.KEY_NOTES)));
