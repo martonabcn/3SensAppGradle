@@ -1,0 +1,86 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+>
+
+    <ImageView
+        android:id="@+id/bateriauser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="61dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/logouab" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_alignRight="@+id/name"
+        android:layout_alignLeft="@+id/surname"
+        android:layout_below="@+id/surname"
+        android:ems="10"
+         />
+
+     <TextView
+         android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_alignRight="@+id/name"
+        android:layout_alignLeft="@+id/age"
+        android:layout_below="@+id/age"
+        android:ems="10"
+ />
+
+       <TextView
+        android:id="@+id/notes"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/email"      
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/email"
+        android:ems="10"
+ />
+
+       <TextView
+           android:id="@+id/email"
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/phone"      
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/phone"
+        android:ems="10"
+ />
+
+       <TextView
+         android:id="@+id/phone"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/address"      
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/address"
+        android:ems="10"
+ />
+
+       <TextView
+           android:id="@+id/surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name"        
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/name"
+        android:ems="10"
+ />
+
+       <TextView
+           android:id="@+id/name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/bateriauser"
+           android:layout_marginBottom="14dp"
+           android:layout_toLeftOf="@+id/bateriauser"
+           android:ems="10" />
+
+</RelativeLayout>

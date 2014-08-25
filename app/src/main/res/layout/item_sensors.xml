@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView android:id="@+id/numerosensor" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:layout_gravity="center_horizontal" 
+                android:layout_weight="1.04" 
+                android:text="Sensor numero "/>
+
+            <ImageView
+                android:id="@+id/bateria5"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" 
+                android:src="@drawable/bateria5" />
+            
+            <TextView android:layout_weight="1.04" 
+                android:id="@+id/porcentaje_bateria" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal" 
+				android:text="% bateria"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/LinearLayout2"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/bombilla"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/gota"
+                android:src="@drawable/bombilla" />
+
+            <ImageView
+                android:id="@+id/termometro"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/bombilla"
+                android:src="@drawable/temperatura" />
+
+            <ImageView
+                android:id="@+id/gota"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/palabragas"
+                android:src="@drawable/gota" />
+
+            <TextView
+                android:id="@+id/palabragas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/gota"
+                android:text="GAS" />
+
+            <TextView
+                android:id="@+id/temperatura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/termometro"
+                android:layout_alignLeft="@+id/cuantogas"
+                android:text="Temperatura" />
+
+            <TextView
+                android:id="@+id/agua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/gota"
+                android:layout_centerHorizontal="true"
+                android:text="Agua" />
+
+            <TextView
+                android:id="@+id/cuantogas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/gota"
+                android:layout_alignLeft="@+id/agua"
+                android:text="Cuanto gas" />
+
+            <TextView
+                android:id="@+id/luz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/termometro"
+                android:layout_alignLeft="@+id/temperatura"
+                android:text="Luz" />
+
+            <ImageView
+                android:id="@+id/checkagua"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_above="@+id/bombilla"
+                android:layout_toLeftOf="@+id/agua"
+                android:src="@drawable/ok" />
+
+            <ImageView
+                android:id="@+id/checkgas"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/cuantogas"
+                android:src="@drawable/ok" />
+
+        </RelativeLayout>
+
+</RelativeLayout>
