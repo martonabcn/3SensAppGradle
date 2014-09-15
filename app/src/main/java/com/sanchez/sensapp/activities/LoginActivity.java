@@ -87,7 +87,7 @@ public class LoginActivity extends Activity {
 		protected void onPostExecute(ServerHttpLogin mylogin) {
 			if (mylogin.isLogin()==true){		
 				
-				SharedPreferences sp =getSharedPreferences("Systema", Activity.MODE_MULTI_PROCESS);
+				SharedPreferences sp =getSharedPreferences("Systema", Activity.MODE_PRIVATE);
 				SharedPreferences.Editor ed =sp.edit();
 				ed.putInt("IDUSUARIO", mylogin.getIDuser());
 				ed.commit();

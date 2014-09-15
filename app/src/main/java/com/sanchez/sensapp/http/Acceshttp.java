@@ -23,7 +23,7 @@ public class Acceshttp {
 	private Context context;
 	private static final String myurl = "http://158.109.64.44/3sense";
 	
-	//constructor de la classe li passo el contexte, li ve del service SyncService // TODO SEGURRRRR???????
+	//constructor de la classe li passo el contexte, li ve del service SyncService //
 	public Acceshttp (Context cont){
 		this.context = cont;
 	}
@@ -36,7 +36,7 @@ public class Acceshttp {
 		HttpGet httpget = null;
 		
 		switch (type) {
-		case 1: // GET amb l'adreça completa: concatena l'inici amb el final que corrspon a l'objecte ServerHttpXXX que m'hagi cridat el CallServer
+		case 1: // GET amb l'adreï¿½a completa: concatena l'inici amb el final que corrspon a l'objecte ServerHttpXXX que m'hagi cridat el CallServer
 			httpget =new HttpGet(serverobject.getURL(myurl)); 
 			base = httpget; 
 			 break;
@@ -44,7 +44,7 @@ public class Acceshttp {
 			httppost = new HttpPost(serverobject.getURL(myurl));			
 			try { 
 				//le meto como pares url-encodados la pareja de nombre/valor (id/2 o  usuario/Alberto pass/Moral) 
-				//que devuelve mi método getParams(), definido en la interficie ServerFunction y implementado en cada uno de las clases ServerHttpXXX
+				//que devuelve mi mï¿½todo getParams(), definido en la interficie ServerFunction y implementado en cada uno de las clases ServerHttpXXX
 				UrlEncodedFormEntity postEntity = new UrlEncodedFormEntity(serverobject.getParams());
 				httppost.setEntity(postEntity);
 				base = httppost;  

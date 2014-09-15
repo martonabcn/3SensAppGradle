@@ -1,13 +1,13 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 17
+    compileSdkVersion 19
     buildToolsVersion "20.0.0"
 
     defaultConfig {
         applicationId "com.sanchez.sensapp"
-        minSdkVersion 8
-        targetSdkVersion 17
+        minSdkVersion 10
+        targetSdkVersion 19
     }
 
     buildTypes {

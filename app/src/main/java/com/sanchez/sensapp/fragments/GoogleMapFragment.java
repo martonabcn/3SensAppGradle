@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.sanchez.sensapp.R;
 
-public class GoogleMapFragment extends SherlockFragment{
+public class GoogleMapFragment extends SupportMapFragment{
 	private GoogleMap mapa;
 	private LatLng gps;
 	public GoogleMapFragment(){
@@ -36,32 +36,16 @@ public class GoogleMapFragment extends SherlockFragment{
 
 	public void setGps(LatLng gps) {
 		this.gps = gps;
-		CameraUpdate camUpdt = CameraUpdateFactory.newLatLngZoom(gps, 15);
-		mapa.moveCamera(camUpdt);
-		
-		mapa.clear();
+    }
 
-		MarkerOptions myMarker = new MarkerOptions();
-		myMarker.position(gps);
-		myMarker.title("Casa sensors");
-		myMarker.icon(BitmapDescriptorFactory.fromResource(android.R.drawable.ic_menu_mylocation));
-		mapa.addMarker(myMarker);
-	}
-
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragmentgooglemap,null);
-	}
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		
-		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getSherlockActivity());
+		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getActivity());
 		if (status == ConnectionResult.SUCCESS){
-			mapa = ((SupportMapFragment) getSherlockActivity().getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			mapa = getMap();
 			mapa.getUiSettings().setZoomControlsEnabled(true);
 			mapa.getUiSettings().setCompassEnabled(true);
 			mapa.getUiSettings().setMyLocationButtonEnabled(true);
@@ -79,8 +63,9 @@ public class GoogleMapFragment extends SherlockFragment{
 			myMarker.title("Casa sensors");
 			myMarker.icon(BitmapDescriptorFactory.fromResource(android.R.drawable.ic_menu_mylocation));
 			mapa.addMarker(myMarker);
-			
-			
+
+
+
 		}
 	}
 
@@ -95,7 +80,7 @@ public class GoogleMapFragment extends SherlockFragment{
 		@Override
 		public void onMapLongClick(LatLng point) {
 			// TODO Auto-generated method stub
-			//que farà quan clickem una estona al mapa, podriem fer q afegis un marcador.p.ex
+			//que farï¿½ quan clickem una estona al mapa, podriem fer q afegis un marcador.p.ex
 			
 		}
 
@@ -116,9 +101,9 @@ public class GoogleMapFragment extends SherlockFragment{
 	
 	public void onResume(){
 		super.onResume();
-		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getSherlockActivity());
+		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getActivity());
 		if (status != ConnectionResult.SUCCESS){
-			 GooglePlayServicesUtil.getErrorDialog(status, getSherlockActivity(),1);
+			 GooglePlayServicesUtil.getErrorDialog(status,getActivity(),1);
 		}
 	}
 

@@ -29,30 +29,31 @@ public class MainActivity extends SherlockFragmentActivity {
 //ACTIONBAR i FRAGMENTS
       //Obtenemos una referencia a la actionbar
       		ActionBar actBar = getSupportActionBar();
-      		//Establecemos el modo de navegación por pestañas
+      		//Establecemos el modo de navegaciï¿½n por pestaï¿½as
       		actBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-      		//Creamos las pestañas
+      		//Creamos las pestaï¿½as
       		ActionBar.Tab tabuser =	actBar.newTab().setText("Usuari");
       		ActionBar.Tab tabsensors = actBar.newTab().setText("Sensors"); 
       		ActionBar.Tab tabmap = actBar.newTab().setText("Mapa");
       		
 
       			        
-      		//Creamos los fragments de cada pestaña
+      		//Creamos los fragments de cada pestaï¿½a
+        /**
       		Fragment tabiufrag = new InfoUserFragment();
       		Fragment tabsensorsfrag = new InfoSensorsFragment();
       		Fragment tabmapfrag = new MapFragment();
+      		**/
+
+
+      		//Asociamos los listener a las pestaï¿½as
+      		tabuser.setTabListener(new MyTabListener());
+      		tabsensors.setTabListener(new MyTabListener());
+      		tabmap.setTabListener(new MyTabListener());
       		
 
-
-      		//Asociamos los listener a las pestañas
-      		tabuser.setTabListener(new MyTabListener(tabiufrag));
-      		tabsensors.setTabListener(new MyTabListener(tabsensorsfrag));
-      		tabmap.setTabListener(new MyTabListener(tabmapfrag));
-      		
-
-      		//Añadimos las pestañas a la action bar
+      		//Aï¿½adimos las pestaï¿½as a la action bar
       		actBar.addTab(tabuser);
       		actBar.addTab(tabsensors);
       		actBar.addTab(tabmap);
@@ -62,37 +63,53 @@ public class MainActivity extends SherlockFragmentActivity {
       		
       		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 	      		ActionBar.Tab tabweb = actBar.newTab().setText("Historial");
-	      		Fragment tabwebfrag = new BrowserFragment();
-	      		tabweb.setTabListener(new MyTabListener(tabwebfrag));
+	      		tabweb.setTabListener(new MyTabListener());
 	      		actBar.addTab(tabweb);
       		}
 
     } 
 
     public class MyTabListener implements TabListener {
-
-    	private Fragment fragment;
-    	
-    	public MyTabListener(Fragment frag){		
-    		this.fragment = frag;
-    	    }
-    	
+    	Fragment fragment = null;
     	//FragmentTransaction est 
     	@Override
     	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-    		if (ft != null)
-    		ft.add(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main
+
+    		if (ft != null) {
+                if(tab.getText().equals("Usuari")){
+                    fragment = new InfoUserFragment();
+                }else if(tab.getText().equals("Sensors")){
+                    fragment = new InfoSensorsFragment();
+                }else if(tab.getText().equals("Mapa")){
+                    fragment = new MapFragment();
+                }else if(tab.getText().equals("Historial")){
+                    fragment = new BrowserFragment();
+                }
+                ft.replace(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main
+            }
         }	
 
     	@Override
     	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-    		if (ft != null)
-    		ft.remove(fragment);
+            if (ft != null) {
+                ft.remove(fragment);
+            }
     	}
     	
     	@Override
     	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-    		// TODO Auto-generated method stub	
+            if (ft != null) {
+                if(tab.getText().equals("Usuari")){
+                    fragment = new InfoUserFragment();
+                }else if(tab.getText().equals("Sensors")){
+                    fragment = new InfoSensorsFragment();
+                }else if(tab.getText().equals("Mapa")){
+                    fragment = new MapFragment();
+                }else if(tab.getText().equals("Historial")){
+                    fragment = new BrowserFragment();
+                }
+                ft.replace(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main
+            }
     	}
     /**
     }   
@@ -117,7 +134,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		
 		}
 		@Override
-		public void onLoaderReset(android.support.v4.content.Loader<Cursor> arg0) { //quan torna a començar
+		public void onLoaderReset(android.support.v4.content.Loader<Cursor> arg0) { //quan torna a comenï¿½ar
 		//elimino el cursor antic
 		adapter.swapCursor(null);
 		}

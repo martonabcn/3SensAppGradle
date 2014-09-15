@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="api_key_google_maps_v2">AIzaSyCPn-POlOS2snkj5hoc074Gwhkdw_vaopE</string>
+    <string name="api_key_google_maps_v2">AIzaSyAyC-ifkQB4bo2tLbKZddu7exxb-EgROAQ</string>
     <string name="app_name">3Sens App</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">3Sens</string>

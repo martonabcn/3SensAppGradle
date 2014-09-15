@@ -15,6 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:ems="10"
+          android:text="casaalex"
         android:hint="password"
         android:inputType="textPassword" />
 
@@ -26,6 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:ems="10"
+        android:text="casaalex"
         android:hint="user"
         android:inputType="text" >
 
