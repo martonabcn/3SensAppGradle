@@ -87,7 +87,7 @@ public class InfoSensorsFragment extends Fragment {
 		public void bindView(View arg0, Context arg1, Cursor arg2) {
 			//dona les dades a la part view (grafica)
 			ViewHolder holder;
-			if(arg0.getTag().equals(null)){
+			if(arg0.getTag()==null){
 				holder = new ViewHolder();
 				holder.bateria =(ImageView) arg0.findViewById(R.id.bateria5);
 				holder.cuantogas =(TextView) arg0.findViewById(R.id.cuantogas);

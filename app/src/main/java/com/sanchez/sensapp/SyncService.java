@@ -40,7 +40,7 @@ public class SyncService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		
-		SharedPreferences sp = getSharedPreferences("Sistema", Activity.MODE_MULTI_PROCESS);
+		SharedPreferences sp = getSharedPreferences("Systema", Activity.MODE_PRIVATE);
 		int iduser = sp.getInt("IDUSUARIO", 0); //donam la IDdel user, i un 0 si no existeix la preferencia
 		if(((App)getApplication()).verificaConexion()){
 			new MyAsynctask().execute(iduser+"");

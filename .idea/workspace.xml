@@ -24,15 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb96b727-16a6-46b2-b2a2-b4507dd79383" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Martona\AndroidstudioProjects\3Sens App\app\src\main\java\com\sanchez\sensapp\activities\MapActivity.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/app/App.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/app/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/BrowserFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/BrowserFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/GoogleMapFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/GoogleMapFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/LoginActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3Sens App.iws" />
@@ -59,8 +53,8 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1768">
-              <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+            <state vertical-scroll-proportion="-19.571428" vertical-offset="47" max-vertical-offset="1768">
+              <caret line="53" column="86" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="86" />
               <folding>
                 <element signature="e#1344#2024#0" expanded="true" />
                 <element signature="e#1938#1974#0" expanded="true" />
@@ -71,45 +65,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SyncService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9388489" vertical-offset="175" max-vertical-offset="1037">
-              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoUserFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoUserFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1955">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2193">
-              <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
                 <element signature="e#1389#1418#0" expanded="true" />
                 <element signature="e#1480#1512#0" expanded="true" />
-                <element signature="e#1570#1598#0" expanded="true" />
-                <element signature="e#2158#2190#0" expanded="true" />
-                <element signature="e#2605#2634#0" expanded="true" />
-                <element signature="e#2739#2771#0" expanded="true" />
-                <element signature="e#2879#2907#0" expanded="true" />
-                <element signature="e#3007#3039#0" expanded="true" />
-                <element signature="e#3581#3610#0" expanded="true" />
-                <element signature="e#3715#3747#0" expanded="true" />
-                <element signature="e#3855#3883#0" expanded="true" />
-                <element signature="e#3983#4015#0" expanded="true" />
+                <element signature="e#1570#1587#0" expanded="true" />
+                <element signature="e#2147#2179#0" expanded="true" />
+                <element signature="e#2594#2623#0" expanded="true" />
+                <element signature="e#2728#2760#0" expanded="true" />
+                <element signature="e#2868#2896#0" expanded="true" />
+                <element signature="e#2996#3028#0" expanded="true" />
+                <element signature="e#3570#3599#0" expanded="true" />
+                <element signature="e#3704#3736#0" expanded="true" />
+                <element signature="e#3844#3872#0" expanded="true" />
+                <element signature="e#3972#4004#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SyncService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1037">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoSensorsFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1165" max-vertical-offset="2992">
+              <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/basedades/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7579618" vertical-offset="153" max-vertical-offset="1785">
+              <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -825,7 +829,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/http/object/ServerHttpInfoUsers.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoUserFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/http/Acceshttp.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
@@ -833,13 +836,14 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/MapFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MapActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/BrowserFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/app/App.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/GoogleMapFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1438,23 +1442,23 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2604404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.85884356" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15136054" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43537414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.627551" sideWeight="0.1107739" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.006802721" sideWeight="0.13277693" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6632653" sideWeight="0.13277693" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3197279" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.006802721" sideWeight="0.8672231" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12414966" sideWeight="0.8672231" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31562975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.314871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6632653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1510,16 +1514,16 @@
           <folding>
             <element signature="e#1389#1418#0" expanded="true" />
             <element signature="e#1480#1512#0" expanded="true" />
-            <element signature="e#1570#1598#0" expanded="true" />
-            <element signature="e#2158#2190#0" expanded="true" />
-            <element signature="e#2605#2634#0" expanded="true" />
-            <element signature="e#2739#2771#0" expanded="true" />
-            <element signature="e#2879#2907#0" expanded="true" />
-            <element signature="e#3007#3039#0" expanded="true" />
-            <element signature="e#3581#3610#0" expanded="true" />
-            <element signature="e#3715#3747#0" expanded="true" />
-            <element signature="e#3855#3883#0" expanded="true" />
-            <element signature="e#3983#4015#0" expanded="true" />
+            <element signature="e#1570#1587#0" expanded="true" />
+            <element signature="e#2147#2179#0" expanded="true" />
+            <element signature="e#2594#2623#0" expanded="true" />
+            <element signature="e#2728#2760#0" expanded="true" />
+            <element signature="e#2868#2896#0" expanded="true" />
+            <element signature="e#2996#3028#0" expanded="true" />
+            <element signature="e#3570#3599#0" expanded="true" />
+            <element signature="e#3704#3736#0" expanded="true" />
+            <element signature="e#3844#3872#0" expanded="true" />
+            <element signature="e#3972#4004#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1568,16 +1572,16 @@
           <folding>
             <element signature="e#1389#1418#0" expanded="true" />
             <element signature="e#1480#1512#0" expanded="true" />
-            <element signature="e#1570#1598#0" expanded="true" />
-            <element signature="e#2158#2190#0" expanded="true" />
-            <element signature="e#2605#2634#0" expanded="true" />
-            <element signature="e#2739#2771#0" expanded="true" />
-            <element signature="e#2879#2907#0" expanded="true" />
-            <element signature="e#3007#3039#0" expanded="true" />
-            <element signature="e#3581#3610#0" expanded="true" />
-            <element signature="e#3715#3747#0" expanded="true" />
-            <element signature="e#3855#3883#0" expanded="true" />
-            <element signature="e#3983#4015#0" expanded="true" />
+            <element signature="e#1570#1587#0" expanded="true" />
+            <element signature="e#2147#2179#0" expanded="true" />
+            <element signature="e#2594#2623#0" expanded="true" />
+            <element signature="e#2728#2760#0" expanded="true" />
+            <element signature="e#2868#2896#0" expanded="true" />
+            <element signature="e#2996#3028#0" expanded="true" />
+            <element signature="e#3570#3599#0" expanded="true" />
+            <element signature="e#3704#3736#0" expanded="true" />
+            <element signature="e#3844#3872#0" expanded="true" />
+            <element signature="e#3972#4004#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1779,14 +1783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3281">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
@@ -1799,14 +1795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
           <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2041" max-vertical-offset="2992">
-          <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1896,47 +1884,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/basedades/Helper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/MapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7863721" vertical-offset="1242" max-vertical-offset="1785">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1445" max-vertical-offset="3281">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2193">
-          <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
-          <folding>
-            <element signature="e#1389#1418#0" expanded="true" />
-            <element signature="e#1480#1512#0" expanded="true" />
-            <element signature="e#1570#1598#0" expanded="true" />
-            <element signature="e#2158#2190#0" expanded="true" />
-            <element signature="e#2605#2634#0" expanded="true" />
-            <element signature="e#2739#2771#0" expanded="true" />
-            <element signature="e#2879#2907#0" expanded="true" />
-            <element signature="e#3007#3039#0" expanded="true" />
-            <element signature="e#3581#3610#0" expanded="true" />
-            <element signature="e#3715#3747#0" expanded="true" />
-            <element signature="e#3855#3883#0" expanded="true" />
-            <element signature="e#3983#4015#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoUserFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1955">
+        <state vertical-scroll-proportion="-2.7597404" vertical-offset="1122" max-vertical-offset="1955">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1037">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/fragments/InfoSensorsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1165" max-vertical-offset="2992">
+          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1768">
-          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        <state vertical-scroll-proportion="-19.571428" vertical-offset="47" max-vertical-offset="1768">
+          <caret line="53" column="86" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="86" />
           <folding>
             <element signature="e#1344#2024#0" expanded="true" />
             <element signature="e#1938#1974#0" expanded="true" />
@@ -1946,10 +1929,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/SyncService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9388489" vertical-offset="175" max-vertical-offset="1037">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="e#1389#1418#0" expanded="true" />
+            <element signature="e#1480#1512#0" expanded="true" />
+            <element signature="e#1570#1587#0" expanded="true" />
+            <element signature="e#2147#2179#0" expanded="true" />
+            <element signature="e#2594#2623#0" expanded="true" />
+            <element signature="e#2728#2760#0" expanded="true" />
+            <element signature="e#2868#2896#0" expanded="true" />
+            <element signature="e#2996#3028#0" expanded="true" />
+            <element signature="e#3570#3599#0" expanded="true" />
+            <element signature="e#3704#3736#0" expanded="true" />
+            <element signature="e#3844#3872#0" expanded="true" />
+            <element signature="e#3972#4004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sanchez/sensapp/basedades/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7579618" vertical-offset="153" max-vertical-offset="1785">
+          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
           <folding />
         </state>
       </provider>

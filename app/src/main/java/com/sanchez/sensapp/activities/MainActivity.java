@@ -37,7 +37,7 @@ public class MainActivity extends SherlockFragmentActivity {
       		//Creamos las pestayas
       		ActionBar.Tab tabuser =	actBar.newTab().setText(getString(R.string.frag_user));
       		ActionBar.Tab tabsensors = actBar.newTab().setText(getString(R.string.frag_sensors));
-      		ActionBar.Tab tabmap = actBar.newTab().setText(getString(R.string.frag_map));
+      		ActionBar.Tab tabmap = actBar.newTab().setText(R.string.frag_map);
 
       		//Asociamos los listener a las pestanyas
       		tabuser.setTabListener(new MyTabListener());
