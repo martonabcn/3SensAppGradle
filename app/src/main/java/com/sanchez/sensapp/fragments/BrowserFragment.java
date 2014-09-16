@@ -17,12 +17,9 @@ public class BrowserFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		WebSettings webSettings = web.getSettings();
 		webSettings.setJavaScriptEnabled(true);
-		
-		SharedPreferences sp =getActivity().getSharedPreferences("Systema", Activity.MODE_MULTI_PROCESS);
+		SharedPreferences sp =getActivity().getSharedPreferences("Systema", Activity.MODE_PRIVATE);
 		int iduser =sp.getInt("IDUSUARIO", 0);
-		
 		web.loadUrl("http://158.109.64.44/3sense/grafica_posicion.php?id="+iduser);
-		
 	}
 
 	@Override

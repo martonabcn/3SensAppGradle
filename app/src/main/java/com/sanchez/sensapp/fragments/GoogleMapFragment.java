@@ -80,7 +80,7 @@ public class GoogleMapFragment extends SupportMapFragment{
 		@Override
 		public void onMapLongClick(LatLng point) {
 			// TODO Auto-generated method stub
-			//que far� quan clickem una estona al mapa, podriem fer q afegis un marcador.p.ex
+			//que fara quan clickem una estona al mapa, podriem fer q afegis un marcador.p.ex
 			
 		}
 

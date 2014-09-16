@@ -26,43 +26,34 @@ public class MainActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         int iduser = getIntent().getIntExtra("IDUSUARIO", -1);
+
+
 //ACTIONBAR i FRAGMENTS
       //Obtenemos una referencia a la actionbar
       		ActionBar actBar = getSupportActionBar();
-      		//Establecemos el modo de navegaci�n por pesta�as
+      		//Establecemos el modo de navegacion por pestanyas
       		actBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-      		//Creamos las pesta�as
-      		ActionBar.Tab tabuser =	actBar.newTab().setText("Usuari");
-      		ActionBar.Tab tabsensors = actBar.newTab().setText("Sensors"); 
-      		ActionBar.Tab tabmap = actBar.newTab().setText("Mapa");
-      		
+      		//Creamos las pestayas
+      		ActionBar.Tab tabuser =	actBar.newTab().setText(getString(R.string.frag_user));
+      		ActionBar.Tab tabsensors = actBar.newTab().setText(getString(R.string.frag_sensors));
+      		ActionBar.Tab tabmap = actBar.newTab().setText(getString(R.string.frag_map));
 
-      			        
-      		//Creamos los fragments de cada pesta�a
-        /**
-      		Fragment tabiufrag = new InfoUserFragment();
-      		Fragment tabsensorsfrag = new InfoSensorsFragment();
-      		Fragment tabmapfrag = new MapFragment();
-      		**/
-
-
-      		//Asociamos los listener a las pesta�as
+      		//Asociamos los listener a las pestanyas
       		tabuser.setTabListener(new MyTabListener());
       		tabsensors.setTabListener(new MyTabListener());
       		tabmap.setTabListener(new MyTabListener());
       		
 
-      		//A�adimos las pesta�as a la action bar
+      		//Anyadimos las pestanyas a la action bar
       		actBar.addTab(tabuser);
       		actBar.addTab(tabsensors);
       		actBar.addTab(tabmap);
       		
       		
       		
-      		
-      		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-	      		ActionBar.Tab tabweb = actBar.newTab().setText("Historial");
+          		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+	      		ActionBar.Tab tabweb = actBar.newTab().setText(getString(R.string.frag_browser));
 	      		tabweb.setTabListener(new MyTabListener());
 	      		actBar.addTab(tabweb);
       		}
@@ -70,22 +61,23 @@ public class MainActivity extends SherlockFragmentActivity {
     } 
 
     public class MyTabListener implements TabListener {
-    	Fragment fragment = null;
-    	//FragmentTransaction est 
+        Fragment fragment = null;
+
     	@Override
     	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+            //Creamos los fragments de cada pestanya cuando se clickan
 
     		if (ft != null) {
-                if(tab.getText().equals("Usuari")){
+                if(tab.getText().equals(getString(R.string.frag_user))){
                     fragment = new InfoUserFragment();
-                }else if(tab.getText().equals("Sensors")){
+                }else if(tab.getText().equals(getString(R.string.frag_sensors))){
                     fragment = new InfoSensorsFragment();
-                }else if(tab.getText().equals("Mapa")){
+                }else if(tab.getText().equals(getString(R.string.frag_map))){
                     fragment = new MapFragment();
-                }else if(tab.getText().equals("Historial")){
+                }else if(tab.getText().equals(getString(R.string.frag_browser))){
                     fragment = new BrowserFragment();
                 }
-                ft.replace(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main
+                ft.replace(R.id.contenidor, fragment); //contenidor es el id del layout xml del activity_main
             }
         }	
 
@@ -99,13 +91,13 @@ public class MainActivity extends SherlockFragmentActivity {
     	@Override
     	public void onTabReselected(Tab tab, FragmentTransaction ft) {
             if (ft != null) {
-                if(tab.getText().equals("Usuari")){
+                if(tab.getText().equals(getString(R.string.frag_user))){
                     fragment = new InfoUserFragment();
-                }else if(tab.getText().equals("Sensors")){
+                }else if(tab.getText().equals(getString(R.string.frag_sensors))){
                     fragment = new InfoSensorsFragment();
-                }else if(tab.getText().equals("Mapa")){
+                }else if(tab.getText().equals(getString(R.string.frag_map))){
                     fragment = new MapFragment();
-                }else if(tab.getText().equals("Historial")){
+                }else if(tab.getText().equals(getString(R.string.frag_browser))){
                     fragment = new BrowserFragment();
                 }
                 ft.replace(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main

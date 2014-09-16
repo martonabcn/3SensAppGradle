@@ -20,24 +20,24 @@ public class App extends Application {
 		PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 0, intento, 0);
 		AlarmManager myAlarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 		myAlarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,SystemClock.elapsedRealtime(), 
-				//cada quant? cada 1 minut*60segons*1000 milisegons
+				//cada 1 minuto*60seg*1000 miliseg
 				1000*60*1, pendingIntent);
 		
 	}
 	/**
-	 * Mètode que comprova la connexió a internet. L'utilitzo per comprovar en el SyncService (per si puc fer el CallServer) 
-	 * i en ActivityLogin(per a que em mostri un toast)
+	 * Metode que comprueba la conexion a internet. Lo uso para comprobar en el SyncService (por si puedo hacer un CallServer)
+	 * y en ActivityLogin(para que em muestre un toast)
 	 * AFEGIRLO AMB TOAST A CADA ACTIVITY???????????????????????
 	 * @return
 	 */
 	public boolean verificaConexion() {
 		boolean bConectado = false;
 		ConnectivityManager connec = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
-		// No només wifi, també GPRS
+		// No solo wifi, tambien GPRS
 		NetworkInfo[] redes = connec.getAllNetworkInfo();
 		
 		for (int i = 0; i < redes.length; i++) {
-		// tenim connexió? posem a true
+		// si hay connexion ponemos a true
 			if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
 				bConectado = true;
 			}

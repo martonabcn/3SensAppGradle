@@ -9,5 +9,12 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_sensors">SensorsActivity</string>
+    <string name="frag_user">Usuario</string>
+    <string name="frag_sensors">Sensores</string>
+    <string name="frag_map">Mapa</string>
+    <string name="frag_browser">Historial</string>
+    <string name="login_error">Login Incorrecto</string>
+    <string name="connection_error">Error de conexion</string>
+
 
 </resources>

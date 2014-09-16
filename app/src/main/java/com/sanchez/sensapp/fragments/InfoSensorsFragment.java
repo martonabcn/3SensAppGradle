@@ -70,8 +70,7 @@ public class InfoSensorsFragment extends Fragment {
 			cursor = null;
 
 		}
-		
-		
+
 	}
 	
 	
@@ -88,7 +87,7 @@ public class InfoSensorsFragment extends Fragment {
 		public void bindView(View arg0, Context arg1, Cursor arg2) {
 			//dona les dades a la part view (grafica)
 			ViewHolder holder;
-			if(arg0.getTag() ==null){
+			if(arg0.getTag().equals(null)){
 				holder = new ViewHolder();
 				holder.bateria =(ImageView) arg0.findViewById(R.id.bateria5);
 				holder.cuantogas =(TextView) arg0.findViewById(R.id.cuantogas);
@@ -145,11 +144,11 @@ public class InfoSensorsFragment extends Fragment {
 			int imagecheckgas = R.drawable.ok;
 			int imagecheckagua = R.drawable.ok;
 
-			if(Boolean.parseBoolean(gasok) == false){
+			if(!Boolean.parseBoolean(gasok)){
 				imagecheckgas=R.drawable.wrong;
 			}
 			holder.checkgas.setImageDrawable(getResources().getDrawable(imagecheckgas));
-			if(Boolean.parseBoolean(aguaok) == false){
+			if(!Boolean.parseBoolean(aguaok)){
 				imagecheckagua=R.drawable.wrong;
 			}
 			holder.checkagua.setImageDrawable(getResources().getDrawable(imagecheckagua));
@@ -164,7 +163,7 @@ public class InfoSensorsFragment extends Fragment {
 
 		@Override
 		public View newView(Context arg0, Cursor arg1, ViewGroup arg2) {
-			//com serà la vista?
+			//com serï¿½ la vista?
 			View view = mInflater.inflate(R.layout.item_sensors, arg2,false); 
 			
 			return view;

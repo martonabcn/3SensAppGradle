@@ -51,26 +51,25 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				//quan clico, guardo les dades que he introduit als camps Usuari i Contrasenya
-				//i les comprovo 
+				//al clickar, guardo los datos que he introducido en los campos Usuario y Contrasenya
+				//y las comprovo
 				String userin = txtUser.getText().toString();
 				String passwordin = txtPassword.getText().toString();
-				if(!userin.equals("") || !passwordin.equals("")){
+				if(!userin.equals("") || !passwordin.equals("")){ //si userin o passwordin no estan vacios
 					MiAsynctask myasynctask = new MiAsynctask();
 					if(((App)getApplication()).verificaConexion()){
 						myasynctask.execute(userin, passwordin);
 					}else{
-						Toast.makeText(getBaseContext(), "No Internet connection", Toast.LENGTH_LONG).show();
+						Toast.makeText(getBaseContext(), getString(R.string.connection_error), Toast.LENGTH_LONG).show();
 					}
 				}
 			}
 		});
 	}
 		
-				
-				//asinctask
+
 	private class MiAsynctask extends AsyncTask<String, Void, ServerHttpLogin> { //ejecuta en 2o plano  
-												//insert, update, return
+
 		@Override
 		protected ServerHttpLogin doInBackground(String... params) {
 			ServerHttpLogin mylogin = new ServerHttpLogin(); //creo un objeto pato de MI clase anteriormente
@@ -78,7 +77,7 @@ public class LoginActivity extends Activity {
 			mylogin.setPassword(params[1]);
 			Acceshttp acces = new Acceshttp(getBaseContext());
 			acces.CallServer(mylogin, 2); // 2 es post
-			//li passo el mylogin(conte user i pass) al metode callserver, i aquest retorna la info del servido al mylogin, el mylogin ja conte la info retornada pel server
+			//le paso el mylogin(contiene user y pass) al metodo callserver,y este retorna la info del servidor al mylogin
 			
 			return mylogin;
 		}
@@ -97,7 +96,8 @@ public class LoginActivity extends Activity {
 				startActivity(intent);
 			}
 			else{
-				setMessage("Login incorrecte");
+                //Toast.makeText(getBaseContext(), getString(R.string.login_error), Toast.LENGTH_LONG).show();
+              setMessage(getString(R.string.login_error));
 			}
 		}
 		
