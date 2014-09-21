@@ -31,8 +31,8 @@ public class ServerHttpMapa implements ServerFunction{
 	}
 
 	/**
-	 * mètode que fa el tractament de les dades que obté del php del servidor
-	 * Aquest php torna la informació  dels sensors en la forma: 
+	 * metode que fa el tractament de les dades que obte del php del servidor
+	 * Aquest php torna la informacio  dels sensors en la forma:
 	 * NumeroMaximDeSensors <br>Sensor1-posicion/Sensor2-posicion/Sensor3-posicion/
 	 * 
 	 */
@@ -68,7 +68,7 @@ public class ServerHttpMapa implements ServerFunction{
 					c.moveToFirst();
 					int id = c.getInt(c.getColumnIndex(Sensors.KEY_ID));
 					//String where2 = (Sensors.KEY_ID + " = " + id); TB es pot fer aixi en comptes de amb les URIs
-					Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_SENSORS, id+"");//al final de l'adreça posam la ID  
+					Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_SENSORS, id+"");//al final de l'adreï¿½a posam la ID  
 					ContentValues values = new ContentValues();
 					values.put(Sensors.KEY_POSICIO, datosCol[1]);
 					cr.update(entityUri, values, null, null); 

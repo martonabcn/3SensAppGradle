@@ -49,9 +49,8 @@ public class MainActivity extends SherlockFragmentActivity {
       		actBar.addTab(tabuser);
       		actBar.addTab(tabsensors);
       		actBar.addTab(tabmap);
-      		
-      		
-      		
+
+
           		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 	      		ActionBar.Tab tabweb = actBar.newTab().setText(getString(R.string.frag_browser));
 	      		tabweb.setTabListener(new MyTabListener());
@@ -111,7 +110,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		@Override
 		public android.support.v4.content.Loader<Cursor> onCreateLoader( //inicialitza els loaders, de moment en tinc 1
 				int arg0, Bundle arg1) {
-		
+
 			CursorLoader cl = new CursorLoader(getApplication(), PatologiaProvider.URI_USER,
 					new String[]{User._ID,User.KEY_NAME,User.KEY_SURNAME,User.KEY_AGE,User.KEY_ADDRESS,User.KEY_PHONE, User.KEY_EMAIL,User.KEY_NOTES},
 					null, null, null);

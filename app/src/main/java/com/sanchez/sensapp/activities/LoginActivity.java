@@ -20,9 +20,7 @@ import com.sanchez.sensapp.app.App;
 import com.sanchez.sensapp.http.Acceshttp;
 import com.sanchez.sensapp.http.object.ServerHttpLogin;
 /**
- * Infla la interficie d'usuari amb la pantalla de login.  
- * 
- *
+ * Infla la interficie de usuario con la pantalla de login.
  */
 public class LoginActivity extends Activity {
 	EditText txtUser;
@@ -34,12 +32,10 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		
 		 txtUser = (EditText)findViewById(R.id.edittext_user);
 		 txtPassword = (EditText)findViewById(R.id.edittext_password);
 		 btnLogin = (Button)findViewById(R.id.buttonlogin);
 		 txtviewMessage = (TextView)findViewById(R.id.txtview_message);
-		
 	}
 	
 	@Override

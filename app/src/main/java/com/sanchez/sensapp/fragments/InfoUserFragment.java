@@ -25,9 +25,7 @@ public class InfoUserFragment extends Fragment {
 	TextView phonetv;
 	TextView emailtv;
 	TextView notestv;
-	
-	
-	User userdades;
+
 	public InfoUserFragment() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -36,7 +34,7 @@ public class InfoUserFragment extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-		//li passo la id de larxiu de vista al inflater .retorna una view i lanomeno v.
+		//le paso la id del archivo de vista al inflater.retorna una view llamada v.
 		View v = inflater.inflate(R.layout.fragment_infouser, container, false);
         return v;
     }
@@ -44,6 +42,7 @@ public class InfoUserFragment extends Fragment {
 	
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+        //Asocio cada elemento del xml al elemento de tipo TextView
 		nametv = (TextView) getActivity().findViewById(R.id.name);
 		surnametv = (TextView) getActivity().findViewById(R.id.surname);
 		agetv = (TextView) getActivity().findViewById(R.id.age);
@@ -55,16 +54,16 @@ public class InfoUserFragment extends Fragment {
 		BBDD bd = new BBDD(getActivity());
 		bd.open();
 		Cursor c = bd.getUser();
-		
+
 		c.moveToFirst();
 		if( c.getCount() != 0){
-			nametv.setText("Nom: " +c.getString(c.getColumnIndex(Helper.User.KEY_NAME)));
-			surnametv.setText("Cognom: " +c.getString(c.getColumnIndex(Helper.User.KEY_SURNAME)));
-			agetv.setText("Edat: " +c.getString(c.getColumnIndex(Helper.User.KEY_AGE)));
-			addresstv.setText("Adresa: " +c.getString(c.getColumnIndex(Helper.User.KEY_ADDRESS)));
-			phonetv.setText("Telefon: " +c.getString(c.getColumnIndex(Helper.User.KEY_PHONE)));
-			emailtv.setText("Email: " +c.getString(c.getColumnIndex(Helper.User.KEY_EMAIL)));
-			notestv.setText("Notes: " +c.getString(c.getColumnIndex(Helper.User.KEY_NOTES)));
+			nametv.setText(getString(R.string.iu_name) +c.getString(c.getColumnIndex(Helper.User.KEY_NAME)));
+			surnametv.setText(getString(R.string.iu_surname) +c.getString(c.getColumnIndex(Helper.User.KEY_SURNAME)));
+			agetv.setText(getString(R.string.iu_age) +c.getString(c.getColumnIndex(Helper.User.KEY_AGE)));
+			addresstv.setText(getString(R.string.iu_address) +c.getString(c.getColumnIndex(Helper.User.KEY_ADDRESS)));
+			phonetv.setText(getString(R.string.iu_phone) +c.getString(c.getColumnIndex(Helper.User.KEY_PHONE)));
+			emailtv.setText(getString(R.string.iu_email) +c.getString(c.getColumnIndex(Helper.User.KEY_EMAIL)));
+			notestv.setText(getString(R.string.iu_notes) +c.getString(c.getColumnIndex(Helper.User.KEY_NOTES)));
 		}
 		bd.close();
 		c.close();	
@@ -73,9 +72,9 @@ public class InfoUserFragment extends Fragment {
 		cursor.moveToFirst();
 		
 		
-		if( cursor.getCount() > 0){ //PQ aqui es mes gran i al anterior diferent??
+		if( cursor.getCount() > 0){
 			String bateria = cursor.getString(cursor.getColumnIndex(Helper.Sensors.KEY_BATERIA));
-			bateria =bateria.substring(0,bateria.length()-1); //per treure el unpercent que retorna el php
+			bateria =bateria.substring(0,bateria.length()-1); //elimino el % que retorna el php
 		
 		cursor.close();	
 
@@ -84,7 +83,7 @@ public class InfoUserFragment extends Fragment {
 			int imagebateria = R.drawable.bateria5;
 			
 			Double n = (double)perbat/25;
-			int p = n.intValue(); //agafo nomes la part sencera, abans dels decimals
+			int p = n.intValue(); //solo parte entera, antes de los decimales
 			switch (p) {
 			case 0:
 				imagebateria=R.drawable.bateria1;

@@ -14,8 +14,8 @@ import android.util.Log;
 
 
 /**
- * Classe que fa la gestió i el tractament de dades. Cadascun dels elements "SENSORS" o "MOBILESENSOR"
- *  té la seva URIassociada amb la que s'accedeix des dels altres components de la app(per exemple quan es 
+ * Classe que fa la gestio i el tractament de dades. Cadascun dels elements "SENSORS" o "MOBILESENSOR"
+ *  te la seva URIassociada amb la que s'accedeix des dels altres components de la app(per exemple quan es
  *  fa el treatdata des de qualsevol ServerHttpObject.
  */
 public class SensorsProvider extends ContentProvider {
@@ -31,12 +31,12 @@ public class SensorsProvider extends ContentProvider {
 	private static final int ALL_SENSOR_MOBILE = 3; 
 	private static final int SINGLE_SENSOR_MOBILE = 4;
 	
-	/**  un objecte de la classe UriMatcher permet interpretar patrons en una URI. Sabré si la URI
-	 *  fa referencia a una tabla genèrica o a un registre concret a través de la seva ID.
+	/**  un objecte de la classe UriMatcher permet interpretar patrons en una URI. Sabre si la URI
+	 *  fa referencia a una tabla generica o a un registre concret a traves de la seva ID.
 	 *   Inicialitzarem l'objecte UriMatcher dient-li el format dels 4 tipus de URI, de forma que
 	 *   pugui diferenciar-los i tornar-nos el seu tipus (una de les 4 constants creades). Amb el 
 	 *   addURI indiquem la authority de la nostra URI, el format de la entitat que demanem, i el tipus 
-	 * 	amb el que volem identificar aquest format. Quan la cridi em tornarà si es 1 2 3 o 4**/
+	 * 	amb el que volem identificar aquest format. Quan la cridi em tornare si es 1 2 3 o 4**/
 	
 	private static final UriMatcher mUriMatcher; 
 	static{
@@ -50,9 +50,9 @@ public class SensorsProvider extends ContentProvider {
 
 
 	
-	private SQLiteDatabase myDatabase;//no té constructor pq tu no el crides, el crida el sistema
-	/** a l'oncreate: inicialitzar la nostra base de dades, a través del seu nom i versió, pel qual utilitzem 
-	* la classe Helper creada i a través del context de Helper 
+	private SQLiteDatabase myDatabase;//no te constructor pq tu no el crides, el crida el sistema
+	/** a l'oncreate: inicialitzar la nostra base de dades, a traves del seu nom i versio, pel qual utilitzem
+	* la classe Helper creada i a traves del context de Helper
 	*/
 	@Override
 	public boolean onCreate() { //s'inicializa el CP al arranque 
@@ -63,8 +63,8 @@ public class SensorsProvider extends ContentProvider {
 	}
 	
 	/**
-	 * mètode query rep com a params:una URI, una llista de noms de columna, un criteri de selecció,
-	 * una llista de valors per les variables utilitzadas en el criteri anterior, i un criteri d'ordenació
+	 * metode query rep com a params:una URI, una llista de noms de columna, un criteri de seleccio,
+	 * una llista de valors per les variables utilitzadas en el criteri anterior, i un criteri d'ordenacio
 	 * Retorna un cursor
 	 */
 	@Override
@@ -73,10 +73,10 @@ public class SensorsProvider extends ContentProvider {
 		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 		
 		switch (mUriMatcher.match(uri)){
-		//faig match amb la uri que li passo al query amb el meu objecte mUriMatcher definit més a dalt
-		case SINGLE_SENSOR: //si el tipus tornat és SINGLE,substitueixo el criteri de selecció 
+		//faig match amb la uri que li passo al query amb el meu objecte mUriMatcher definit mes a dalt
+		case SINGLE_SENSOR: //si el tipus tornat es SINGLE,substitueixo el criteri de seleccio
 			qb.setTables(Helper.DB_TABLE_SENSORS); 
-			//ensenyam,de la taula de sensors, només la que tingui la id de la uri q minteressa
+			//ensenyam,de la taula de sensors, nomes la que tingui la id de la uri q minteressa
 			qb.appendWhere(Helper.Sensors._ID + " = " + uri.getPathSegments().get(1)); 
 			break;
 		case ALL_SENSORS: //tb pq podem CONSULTAR mes dun
@@ -122,9 +122,9 @@ public class SensorsProvider extends ContentProvider {
 
 	
 	/**
-	 *identificar el tipus de dades que retorna el content provider. Aquest tipus de dades s'expresarà
-	 * com un MIME Type, per a determinar el tipus de dades que estan rebent després d'una petició al
-	 *  servidor. Això ajudarà a determinar quines aplicacions son capaces de processar aquestes dades.
+	 *identificar el tipus de dades que retorna el content provider. Aquest tipus de dades s'expresare
+	 * com un MIME Type, per a determinar el tipus de dades que estan rebent despres d'una peticio al
+	 *  servidor. Aixi ajudare a determinar quines aplicacions son capaces de processar aquestes dades.
 	 */
 	@Override
 	public String getType(Uri uri) {

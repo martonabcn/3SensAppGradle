@@ -15,6 +15,13 @@
     <string name="frag_browser">Historial</string>
     <string name="login_error">Login Incorrecto</string>
     <string name="connection_error">Error de conexion</string>
+    <string name="iu_name">Nombre: </string>
+    <string name="iu_surname">Apellido: </string>
+    <string name="iu_address">Direccion: </string>
+    <string name="iu_age">Edad: </string>
+    <string name="iu_phone">Telefono: </string>
+    <string name="iu_email">E-mail: </string>
+    <string name="iu_notes">Notas: </string>
 
 
 </resources>

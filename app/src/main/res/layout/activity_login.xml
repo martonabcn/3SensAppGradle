@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:ems="10"
-          android:text="casaalex"
+        android:text="casaalex"
         android:hint="password"
         android:inputType="textPassword" />
 

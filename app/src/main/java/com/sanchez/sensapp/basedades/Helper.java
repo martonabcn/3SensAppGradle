@@ -21,7 +21,7 @@ public class Helper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 constants amb els noms de les columnes de les dades on situaré la info proporcionada pel meu 
+	 constants amb els noms de les columnes de les dades on situare la info proporcionada pel meu
 	 content provider. Per afegir les meves columnes al CP, faig servir les columnes standard 
 	 ja definides a la classe BaseColumns
 	 */
@@ -83,12 +83,12 @@ public class Helper extends SQLiteOpenHelper {
 				"create table " + DB_TABLE_MOBILESENSOR + "("
 				+ Sensors.KEY_ID +" integer primary key AUTOINCREMENT, "
 				+ Sensors.KEY_BATERIA + " text, "
-				+ Sensors.KEY_POSICIO + " text);"; //només son noms, no adreces
+				+ Sensors.KEY_POSICIO + " text);"; //nomes son noms, no adreces
 	
 
 	@Override
 	public void onCreate(SQLiteDatabase arg0) {
-		//Se ejecuta la sentencia SQL de creación de la tabla
+		//Se ejecuta la sentencia SQL de creacion de la tabla
 		arg0.execSQL(DATABASE_CREATE_User);
 		arg0.execSQL(DATABASE_CREATE_Sensors);
 		arg0.execSQL(DATABASE_CREATE_MobileSensor);	
@@ -96,7 +96,7 @@ public class Helper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase dbtoupgrade, int oldVersion, int newVersion) {
-		// fer!! AIXI ESTÀ BÉ?????????????????????
+		// fer!! AIXI ESTa Be?????????????????????
 		dbtoupgrade.execSQL("DROP TABLE IF EXISTS " + DB_TABLE_USER);
 		dbtoupgrade.execSQL("DROP TABLE IF EXISTS " + DB_TABLE_SENSORS);
 		dbtoupgrade.execSQL("DROP TABLE IF EXISTS " + DB_TABLE_MOBILESENSOR);
