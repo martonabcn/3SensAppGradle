@@ -19,7 +19,7 @@ import com.sanchez.sensapp.http.interficie.ServerFunction;
 
 public class ServerHttpMapaBateria implements ServerFunction{
 	private final String url = "/Iphone_datosSensorUser.php";
-	//cuando le pasamos la id del usuario, este php devuelve la bateria del sensor móvil
+	//cuando le pasamos la id del usuario, este php devuelve la bateria del sensor movil
 	
 	private String iduser;
 	public ServerHttpMapaBateria(String iduser) {

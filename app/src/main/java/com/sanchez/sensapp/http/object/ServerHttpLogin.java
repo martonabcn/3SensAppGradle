@@ -14,7 +14,7 @@ public class ServerHttpLogin implements ServerFunction {
 	private final String url = "/Iphone_login.php";
 
 	
-	//mètode que afegeix la última part del string a la adreça web i la retorna sencera
+	//metode que afegeix la ultima part del string a la adresa web i la retorna sencera
 	@Override
 	public String getURL(String urlBase) {
 		String address = (urlBase + this.url);
@@ -22,7 +22,7 @@ public class ServerHttpLogin implements ServerFunction {
 	}
 
 	
-	//Mètodes amb els que podré recuperar les variables que provenen del servidor
+	//Metodes amb els que podre recuperar les variables que provenen del servidor
 	private int IDuser;
 	public int getIDuser() {
 		return IDuser;
@@ -33,20 +33,20 @@ public class ServerHttpLogin implements ServerFunction {
 	}
 
 	/**
-	 * mètode que fa el tractament de les dades que obté del php del servidor
-	 * les dades em venen separades per <br>. en primera posició obtinc 0 si el login és incorrecte, i 1 si és correcte.
-	 * en la segona posició obtinc la ID del usuari
+	 * metode que fa el tractament de les dades que obte del php del servidor
+	 * les dades em venen separades per <br>. en primera posicio obtinc 0 si el login es incorrecte, i 1 si es correcte.
+	 * en la segona posicio obtinc la ID del usuari
 	 */
 
 	@Override
 	public void treatData(Context context, String data) { //TODO ve de la Classe Acceshttp a la comanda function.treatData(context, s);
 		String[] d = data.split("<br>"); //separo les dades per <br>
-		if(d[0].equals("1")){ //si login és correcte
+		if(d[0].equals("1")){ //si login es correcte
 			islogin=true; //guardo el valor true a variable islogin
 			IDuser = Integer.parseInt(d[1]); // guardo com a Integer a la variable IDuser el numero de ID de usuari que em torna el php
 		}
 		else{
-			islogin=false; //si login és incorrecte la variable islogin valdra false
+			islogin=false; //si login es incorrecte la variable islogin valdra false
 		}
 	}
 		
@@ -71,13 +71,13 @@ public class ServerHttpLogin implements ServerFunction {
 		}
 		
 
-/**mètode que crea una llista de noms+valors i associa el nom de la variable que demana el php amb el 
- * valor que serà l'introduit per l'usuari a la pantalla de login
+/**metode que crea una llista de noms+valors i associa el nom de la variable que demana el php amb el
+ * valor que sera l'introduit per l'usuari a la pantalla de login
  */
 	@Override
 	public List<NameValuePair> getParams() {
 		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2); 
-		nameValuePairs.add(new BasicNameValuePair("usuario", getUser())); //"usuario" i "pass" és el nom que demana el php
+		nameValuePairs.add(new BasicNameValuePair("usuario", getUser())); //"usuario" i "pass" es el nom que demana el php
 		nameValuePairs.add(new BasicNameValuePair("pass", getPassword()));
 		
 		return nameValuePairs;

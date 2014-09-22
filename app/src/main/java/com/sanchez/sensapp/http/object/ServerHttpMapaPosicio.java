@@ -45,7 +45,7 @@ public class ServerHttpMapaPosicio implements ServerFunction{
 				//update
 				c.moveToFirst();
 				int id = c.getInt(c.getColumnIndex(Sensors.KEY_ID));
-				Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_MOBILESENSOR, id+"");//al final de l'adreça poso la ID  
+				Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_MOBILESENSOR, id+"");//al final de l'adresa poso la ID
 				ContentValues values = new ContentValues();
 				values.put(Sensors.KEY_POSICIO, data);
 				cr.update(entityUri, values, null, null);

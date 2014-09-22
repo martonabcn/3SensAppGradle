@@ -21,7 +21,7 @@ public class ServerHttpInfoSensors implements ServerFunction{
 	private final String url = "/Iphone_datosSensores.php";
 
 	
-	//mètode que afegeix la última part del string a la adreça web i la retorna sencera
+	//mEtode que afegeix la Ultima part del string a la adresa web i la retorna sencera
 	@Override
 	public String getURL(String url) {
 		return url+this.url;
@@ -33,26 +33,26 @@ public class ServerHttpInfoSensors implements ServerFunction{
 	}
 	
 	/**
-	 * mètode que fa el tractament de les dades que obté del php del servidor
-	 * Aquest php torna la informació  dels sensors en la forma: 
+	 * metode que fa el tractament de les dades que obte del php del servidor
+	 * Aquest php torna la informacio  dels sensors en la forma:
 	 * NumeroMaximDeSensors <br>Sensor1-43-328.0-7.409149-False-False/Sensor2-......
 	 * 
 	 */
 	@Override
 	public void treatData(Context context, String data) {
 		
-		if(!data.equals("<br>")){ //si nomes és br, no fa res
-			String[] itemSensor = data.split("<br>"); // separo les dades. En la posició 0 em queda el nummaxdesensors, en la 1 la resta de informació
+		if(!data.equals("<br>")){ //si nomes es br, no fa res
+			String[] itemSensor = data.split("<br>"); // separo les dades. En la posicio 0 em queda el nummaxdesensors, en la 1 la resta de informacio
 			
 			ContentResolver cr = context.getContentResolver(); 
 			Cursor c = cr.query(SensorsProvider.URI_SENSORS, null, null, null, null); //pregunto si ja hi ha algo a la Base de Dades interna ???????????????
 		//	cursor.moveToFirst(); NO HI ERA. HAURIA D'ESTAR???????		
-			if(c.getCount() == 0){ //si no hi ha res, (primera vegada que accedeixo)l'hauré de crear
+			if(c.getCount() == 0){ //si no hi ha res, (primera vegada que accedeixo)l'haure de crear
 				
 				for(String item : itemSensor[1].split("/")){ //fesme un item de cada sensor, separat del seguent per /
 					String[] dCol = item.split("-"); //coloca a una posicio del string cada dada del sensor
 					Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_SENSORS, 0+"");
-					//Afegeixo un 0 ala adreça de memoria interna
+					//Afegeixo un 0 ala adresa de memoria interna
 					ContentValues values = new ContentValues();
 					values.put(Helper.Sensors.KEY_Name, dCol[0]); //coloca cada dada al camp corresponent CR
 					values.put(Helper.Sensors.KEY_BATERIA, dCol[1]);
@@ -63,7 +63,7 @@ public class ServerHttpInfoSensors implements ServerFunction{
 					cr.insert(entityUri, values); //inserta la Uri i les dades al CR
 				}
 				
-			}else{ //si ja existeixen dades inserides a la BD interna, situaré la info a la posicio de memoria del sensor corresponent
+			}else{ //si ja existeixen dades inserides a la BD interna, situara la info a la posicio de memoria del sensor corresponent
 				for(String item : itemSensor[1].split("/")){ 
 					String[] dCol = item.split("-"); 
 					
@@ -74,7 +74,7 @@ public class ServerHttpInfoSensors implements ServerFunction{
 					cursor.moveToFirst();
 					
 					int idSensor = cursor.getInt(cursor.getColumnIndex(Helper.Sensors.KEY_ID)); //guardo com a sencer la columna ID
-					Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_SENSORS, idSensor+""); //i l'afegeixo a la adreça URI
+					Uri entityUri = Uri.withAppendedPath(SensorsProvider.URI_SENSORS, idSensor+""); //i l'afegeixo a la adresa URI
 					ContentValues values = new ContentValues();
 					values.put(Helper.Sensors.KEY_Name, dCol[0]); 
 					values.put(Helper.Sensors.KEY_BATERIA, dCol[1]);
@@ -87,9 +87,9 @@ public class ServerHttpInfoSensors implements ServerFunction{
 			}
 		}
 		/**
-		 * Una vegada ?????? creo un objecte de la classe ServerHttpMapa, que em permetrà
+		 * Una vegada ?????? creo un objecte de la classe ServerHttpMapa, que em permetra
 		 *  connectar amb el servidor. 
-		 * Se situa aquí per a que no ataquin al servidor tots dos alhora, sino primer un i despres laltre
+		 * Se situa aqui per a que no ataquin al servidor tots dos alhora, sino primer un i despres laltre
 		 */
 		
 		ServerHttpMapa SHMapa = new ServerHttpMapa(iduser);

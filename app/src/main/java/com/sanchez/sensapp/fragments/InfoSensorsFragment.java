@@ -73,26 +73,29 @@ public class InfoSensorsFragment extends Fragment {
 
 	}
 	
-	// Adaptador que hace de puente entre los datos que se le pasan por el cursor y las vistas del ListView
+	// Adaptador hace de puente entre los datos que se le pasan por cursor y las vistas del ListView
 	
 	private class SensorAdapter extends CursorAdapter{
 		private LayoutInflater mInflater;
 		public SensorAdapter(Context context, Cursor c) {
-            // llamamos al constructor indicando contexto, cursor con la consulta y booleano que indica que la consulta ha de ser regenerada
+            // llamamos al constructor indicando contexto, cursor y booleano que
+            // indica que la consulta ha de ser regenerada
 			super(context, c,true);
-			mInflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			//inflo el xml amb una fucnio q crida a cada cop per crear una view de cada item
+
 		}
 
         @Override
         public View newView(Context ctxto, Cursor mcursor, ViewGroup mviewgroup) {
             //Indicamos como sera la vista
-            View view = mInflater.inflate(R.layout.item_sensors, mviewgroup,false);
+            //inflo el xml con una fucnion q llama a cada vez para crear una view de cada item
+            mInflater=(LayoutInflater)ctxto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = mInflater.inflate(R.layout.item_sensors, mviewgroup, false);
 
             return view;
         }
-        // A ViewHolder keeps references to children views to avoid unneccessary calls
-        // to findViewById() on each row.
+
+        // Creamos una clase ViewHolder para guardar la referencia a los elementos que mostraremos para evitar llamadas innecesarias
+
 
         private class ViewHolder{ //encapsulo los objetos visuals. solo calcula uns vez. asi no he de sobreponer imagenes
             ImageView bateria;
@@ -105,16 +108,14 @@ public class InfoSensorsFragment extends Fragment {
             ImageView checkgas ;
             ImageView checkagua ;
         }
-        //bindView Rellena con los datos la parte view (grafica)que se nos pasa de la llamada anterior y el cursor que apunta al elemento actual.
 
+        //Rellena con los datos la parte view (grafica)que se nos pasa de la llamada anterior y el cursor que apunta al elemento actual.
 		@Override
 		public void bindView(View myview, Context mycontext, Cursor mycursor) {
 
-            // Creates a ViewHolder and store references to the children views we want to bind data to.
+            // creo instancia del Holder.
             ViewHolder holder;
-            // When myview is not null, we can reuse it directly, there is no need
-            // to reinflate it. We only inflate a new View when the myView supplied
-            // by ListView is null.
+            //Si mi vista no es reciclada, la hemos de inflar.
 			if(myview.getTag()==null){
 				holder = new ViewHolder();
 				holder.bateria =(ImageView) myview.findViewById(R.id.bateria5);
@@ -128,8 +129,7 @@ public class InfoSensorsFragment extends Fragment {
 				holder.checkagua =(ImageView) myview.findViewById(R.id.checkagua);
 				myview.setTag(holder);
 			}else{
-                // Get the ViewHolder back to get fast access to the 6 TextView
-                // and the 3ImageView.
+                //Si la vista ya existe, reciclamos, recuperamos el viewHolder asociado
 				holder =(ViewHolder) myview.getTag();
 			}
 			
@@ -145,14 +145,18 @@ public class InfoSensorsFragment extends Fragment {
             Log.e("milogbat", percentatge_bateria);
             Log.e("milogagua", aguaok);
             Log.e("miloggas", gasok);
-			//A cada campo child del holder, le pongo el texto o la imagen correspondiente
-			holder.porcentajebateria.setText(percentatge_bateria + " %");
 
+			//A cada campo child del holder, le pongo el texto o la imagen correspondiente
+
+            holder.porcentajebateria.setText(percentatge_bateria + " %");
+
+            //para la imagen del estado de la bateria, realizo cálculos
 			int perbat = Integer.parseInt(percentatge_bateria);
+            //por defecto, muestro imagen de bateria completamente cargada
 			int imagebateria = R.drawable.bateria5;
 			
 			Double n = (double)perbat/25;
-			int p = n.intValue(); //agafo nomes la part sencera, abans dels decimals
+			int p = n.intValue(); //cojo solo la parte entera, antes de los decimales
 			switch (p) {
 			case 0:
 				imagebateria=R.drawable.bateria1;
@@ -166,25 +170,27 @@ public class InfoSensorsFragment extends Fragment {
 			case 3:
 				imagebateria=R.drawable.bateria4;
 				break;
-				
 			default:
 				break;
 			}
 			
 			holder.bateria.setImageDrawable(getResources().getDrawable(imagebateria));
-			
-			int imagecheckgas = R.drawable.ok;
-			int imagecheckagua = R.drawable.ok;
 
+            //muestra imagen segun si estado de gas es ok o wrong
+			int imagecheckgas = R.drawable.ok;
 			if(!Boolean.parseBoolean(gasok)){
 				imagecheckgas=R.drawable.wrong;
 			}
 			holder.checkgas.setImageDrawable(getResources().getDrawable(imagecheckgas));
+
+            //muestra imagen segun si estado de agua es ok o wrong
+            int imagecheckagua = R.drawable.ok;
 			if(!Boolean.parseBoolean(aguaok)){
 				imagecheckagua=R.drawable.wrong;
 			}
 			holder.checkagua.setImageDrawable(getResources().getDrawable(imagecheckagua));
-		
+
+            //muestra el resto de datos
 			holder.cuantaagua.setText(aguaok);
 			holder.cuantogas.setText(gasok);
 			holder.cuantaluz.setText(cantidadluz);

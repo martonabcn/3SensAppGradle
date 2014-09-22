@@ -6,8 +6,8 @@ import org.apache.http.NameValuePair;
 
 import android.content.Context;
 /**
- * Interficie en la que es declaren els mètodes que permeten definir l'adreça del servidor,
- * el tractament de les dades que retorna el php del servidor i passar paràmetres. 
+ * Interficie en la que es declaren els metodes que permeten definir l'adresa del servidor,
+ * el tractament de les dades que retorna el php del servidor i passar parAmetres.
  * S'implementen en cada classe de tipus ServerHttp
  */
 
