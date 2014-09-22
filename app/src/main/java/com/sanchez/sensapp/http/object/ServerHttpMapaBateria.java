@@ -26,6 +26,7 @@ public class ServerHttpMapaBateria implements ServerFunction{
 		this.iduser = iduser;
 	}
 
+    //metodo que concatena la pagina del php de bateria sensormovil con el resto de la direccion url
 	@Override
 	public String getURL(String url) {
 		return url+this.url;

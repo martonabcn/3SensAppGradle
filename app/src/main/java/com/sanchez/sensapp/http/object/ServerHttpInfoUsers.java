@@ -22,7 +22,7 @@ public class ServerHttpInfoUsers implements ServerFunction{
 		this.iduser = iduser;
 	}
 
-	//m�tode que afegeix la �ltima part del string a la adre�a web i la retorna sencera
+    //metodo que concatena la pagina del php de datosuser con el resto de la direccion
 	@Override
 	public String getURL(String url) {
 		String address = (url+ this.url);

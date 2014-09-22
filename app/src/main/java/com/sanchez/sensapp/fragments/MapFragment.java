@@ -105,7 +105,7 @@ public class MapFragment extends SherlockFragment {
     public void onResume() {
         super.onResume();
 
-       /* GoogleMapFragment f = new GoogleMapFragment();
+        GoogleMapFragment f = new GoogleMapFragment();
 
        //obtengo el numero de usuario de la base de datos y guardo en cursor
         BBDD bbdd = new BBDD(getActivity());
@@ -130,7 +130,7 @@ public class MapFragment extends SherlockFragment {
         }
 
         bbdd.close();
-        ((SherlockFragmentActivity)getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,f).commit();*/
+        ((SherlockFragmentActivity)getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,f).commit();
     }
 
     @Override
@@ -177,7 +177,7 @@ public class MapFragment extends SherlockFragment {
 						params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
 						params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
 						
-						Double left = (Double.parseDouble(pos[0]) /13.6); //segons el planol, dona primer la X amplada i despres la y al�ada
+						Double left = (Double.parseDouble(pos[0]) /13.6); //segons el planol, dona primer la X amplada i despres la y alsada
 						Double top = (Double.parseDouble(pos[1]) /5.6);
 						
 						Double altura = (dpToPx(200)-20)*top;

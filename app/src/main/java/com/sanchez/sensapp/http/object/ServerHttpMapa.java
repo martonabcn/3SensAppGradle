@@ -25,6 +25,7 @@ public class ServerHttpMapa implements ServerFunction{
 		this.iduser = iduser;
 	}
 
+    //metodo que concatena la pagina del php de posicion sensores con el resto de la direccion url
 	@Override
 	public String getURL(String url) {
 		return url+this.url;

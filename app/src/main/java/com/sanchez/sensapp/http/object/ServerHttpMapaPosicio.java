@@ -23,7 +23,8 @@ public class ServerHttpMapaPosicio implements ServerFunction{
 		this.iduser = iduser;
 	}
 
-	@Override
+    //metodo que concatena la pagina del php de posicion sensormovil con el resto de la direccion url
+    @Override
 	public String getURL(String url) {
 		return url+this.url;
 	}

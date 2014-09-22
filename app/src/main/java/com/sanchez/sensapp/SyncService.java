@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
+import android.widget.Toast;
 
 import com.sanchez.sensapp.app.App;
 import com.sanchez.sensapp.http.Acceshttp;
@@ -45,6 +46,7 @@ public class SyncService extends Service {
 		if(((App)getApplication()).verificaConexion()){
 			new MyAsynctask().execute(iduser+"");
 		}
+
 		return Service.START_NOT_STICKY; //no es torna a executar el servei si s'atura
 	}
 	

@@ -20,8 +20,8 @@ import com.sanchez.sensapp.http.interficie.ServerFunction;
 public class ServerHttpInfoSensors implements ServerFunction{
 	private final String url = "/Iphone_datosSensores.php";
 
-	
-	//mEtode que afegeix la Ultima part del string a la adresa web i la retorna sencera
+
+    //metodo que concatena la pagina del php de datos sensores con el resto de la direccion url
 	@Override
 	public String getURL(String url) {
 		return url+this.url;

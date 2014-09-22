@@ -12,15 +12,6 @@ import android.webkit.WebView;
 
 public class BrowserFragment extends Fragment {
 	private WebView web;
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		WebSettings webSettings = web.getSettings();
-		webSettings.setJavaScriptEnabled(true);
-		SharedPreferences sp =getActivity().getSharedPreferences("Systema", Activity.MODE_PRIVATE);
-		int iduser =sp.getInt("IDUSUARIO", 0);
-		web.loadUrl("http://158.109.64.44/3sense/grafica_posicion.php?id="+iduser);
-	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,4 +20,13 @@ public class BrowserFragment extends Fragment {
 		return web;
 	}
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        WebSettings webSettings = web.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        SharedPreferences sp =getActivity().getSharedPreferences("Systema", Activity.MODE_PRIVATE);
+        int iduser =sp.getInt("IDUSUARIO", 0);
+        web.loadUrl("http://158.109.64.44/3sense/grafica_posicion.php?id="+iduser);
+    }
 }

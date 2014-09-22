@@ -24,14 +24,13 @@ import com.sanchez.sensapp.R;
 public class GoogleMapFragment extends SupportMapFragment{
 	private GoogleMap mapa;
 	private LatLng gps;
+
 	public GoogleMapFragment(){
 		gps = new LatLng(0, 0);
+
 	}
 	
 
-	public LatLng getGps() {
-		return gps;
-	}
 
 
 	public void setGps(LatLng gps) {

@@ -15,62 +15,64 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.content.Context;
+import android.widget.Toast;
 
+import com.sanchez.sensapp.R;
 import com.sanchez.sensapp.http.interficie.ServerFunction;
 
 public class Acceshttp {
-//com no hereda de ningu, li dono el contexte:
+//no hereda de nadie, debo darle el contexto:
 	private Context context;
+    //parte de la URL comun en todos los php
 	private static final String myurl = "http://158.109.64.44/3sense";
 	
-	//constructor de la classe li passo el contexte, li ve del service SyncService //
+	//constructor de la clase, le passo el contexto, viene del SyncService //
 	public Acceshttp (Context cont){
-		this.context = cont;
+        this.context = cont;
 	}
-	
-	//creo funcio per cridar al server
+
+	//creo metodo para llamar al server, como parámetros un objeto tipo ServerHttpXXX y 1get/ 2post
 	public void CallServer (ServerFunction serverobject,int type){
-		HttpClient httpclient = new DefaultHttpClient(); //creo un objecte HttpClient: demana peticions al server
+        //creo un instancia HttpClient: hacee peticions al server
+		HttpClient httpclient = new DefaultHttpClient();
 		HttpRequestBase base = null;  
 		HttpPost httppost = null;
 		HttpGet httpget = null;
-		
+
 		switch (type) {
-		case 1: // GET amb l'adre�a completa: concatena l'inici amb el final que corrspon a l'objecte ServerHttpXXX que m'hagi cridat el CallServer
-			httpget =new HttpGet(serverobject.getURL(myurl)); 
+		case 1: // GET con la direccion completa, segun el ServerHttpXXX que le haya pasado al Callserver
+			httpget =new HttpGet(serverobject.getURL(myurl));
 			base = httpget; 
 			 break;
 		case 2: //POST
 			httppost = new HttpPost(serverobject.getURL(myurl));			
 			try { 
-				//le meto como pares url-encodados la pareja de nombre/valor (id/2 o  usuario/Alberto pass/Moral) 
-				//que devuelve mi m�todo getParams(), definido en la interficie ServerFunction y implementado en cada uno de las clases ServerHttpXXX
+				//le meto como pares url-encodados la pareja de nombre/valor (id/2 o  usuario/Alberto pass/Moral)
+				//que devuelve mi mEtodo getParams(), definido en la interficie ServerFunction y implementado en cada uno de las clases ServerHttpXXX
 				UrlEncodedFormEntity postEntity = new UrlEncodedFormEntity(serverobject.getParams());
 				httppost.setEntity(postEntity);
 				base = httppost;  
-			} catch (UnsupportedEncodingException e1) {
-				// TODO Auto-generated catch block ??????????????????????????
+			} catch (UnsupportedEncodingException  e1) {
 				e1.printStackTrace();
 			}
 			
 		default:			
 			break;
 		}
-		
+
 		try {
 			HttpResponse response = httpclient.execute(base);
 			HttpEntity entity = response.getEntity();
-			//Entity es la informacio q prove del server, en el format establert
+			//Entity es la informacion q proviene del server, en el formato establecido
 			String s = EntityUtils.toString(entity);
-			//La transformo en string i se la passo al metode treatData del objecte ServerHttpXXX que m'hagi cridat el CallServer
+			//La transformo en string y se la paso al metodo treatData del objecte ServerHttpXXX que
+			// haya llamado al CallServer
 			serverobject.treatData(context, s);
 			
 		} catch (ClientProtocolException e2) {
-			// TODO Auto-generated catch block ???????????????????
 			e2.printStackTrace();
 		} catch (IOException e3) {
-			// TODO Auto-generated catch block ?????????????????
-			e3.printStackTrace();
+            e3.printStackTrace();
 		}
 		
 		

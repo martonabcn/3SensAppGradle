@@ -14,7 +14,7 @@ public class ServerHttpLogin implements ServerFunction {
 	private final String url = "/Iphone_login.php";
 
 	
-	//metode que afegeix la ultima part del string a la adresa web i la retorna sencera
+	//metodo que concatena la pagina del php de login con el resto de la direccion url
 	@Override
 	public String getURL(String urlBase) {
 		String address = (urlBase + this.url);
@@ -22,11 +22,12 @@ public class ServerHttpLogin implements ServerFunction {
 	}
 
 	
-	//Metodes amb els que podre recuperar les variables que provenen del servidor
+	//metodos para recuperar las variables que provienen del servidor
 	private int IDuser;
 	public int getIDuser() {
 		return IDuser;
 	}
+
 	private Boolean islogin;
 	public Boolean isLogin() {		
 		return islogin;
@@ -67,7 +68,8 @@ public class ServerHttpLogin implements ServerFunction {
 			return password;
 		}
 		public void setPassword(String password) {
-			this.password = password;
+
+            this.password = password;
 		}
 		
 
