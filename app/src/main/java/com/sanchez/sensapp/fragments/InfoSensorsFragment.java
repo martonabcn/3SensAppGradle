@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.sanchez.sensapp.R;
+import com.sanchez.sensapp.app.App;
 import com.sanchez.sensapp.basedades.Helper;
 import com.sanchez.sensapp.basedades.Helper.Sensors;
 import com.sanchez.sensapp.basedades.SensorsProvider;
@@ -44,27 +45,37 @@ public class InfoSensorsFragment extends Fragment {
 		//cursorloader
 		callback = new	miCursorLoaderCallback();
 		getActivity().getSupportLoaderManager().initLoader(0, null, callback);
-		//a cada loader li dono una id diferente, pq cada fragment te un loader propi, i es diferencien per aquesta id
+		//a cada loader le doy una id diferente
 		//el loader de iNFOsENSORS sera id 0
 	}
 	
 	private class miCursorLoaderCallback implements LoaderManager.LoaderCallbacks<Cursor>{
 
 		@Override
+        //creamos CursorLoader con su constructor.
+        // Le pasamos lo que el SensorsProvider necesita, el contexto, la URI donde se encuentra la
+        // info de sensores, y las columnas a devolver.
+        // este método devuelve este CursorLoader creado
 		public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
-			String[] columnes = new String []{Sensors.KEY_ID,Sensors.KEY_Name,Sensors.KEY_BATERIA,Sensors.KEY_GAS,Sensors.KEY_AGUA,Sensors.KEY_LUZ,Sensors.KEY_TEMPERATURA,Sensors.KEY_POSICIO};
+			String[] columnes = new String []{Sensors.KEY_ID,Sensors.KEY_Name,Sensors.KEY_BATERIA,
+                    Sensors.KEY_GAS,Sensors.KEY_AGUA,Sensors.KEY_LUZ,Sensors.KEY_TEMPERATURA,
+                    Sensors.KEY_POSICIO};
 			return new CursorLoader(getActivity(), SensorsProvider.URI_SENSORS,
 					columnes, null, null, null);	
 		
 		}
 
 		@Override
+        //cuando termina la carga, los datos estan disponibles en el cursor para ser usados.
+        // Cambiamos por el nuevo cursor asociandolo al adapter (El framework se encargará de
+        // cerrar el antiguo cursor en el retorno.)
 		public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
 			adapter.swapCursor(arg1);
 			cursor = arg1;
 		}
 
 		@Override
+        // Si los datos no estan disponibles, remplaza el contenido con un cursor vacío.
 		public void onLoaderReset(Loader<Cursor> arg0) {
 			adapter.swapCursor(null);
 			cursor = null;
@@ -74,8 +85,7 @@ public class InfoSensorsFragment extends Fragment {
 	}
 	
 	// Adaptador hace de puente entre los datos que se le pasan por cursor y las vistas del ListView
-	
-	private class SensorAdapter extends CursorAdapter{
+		private class SensorAdapter extends CursorAdapter{
 		private LayoutInflater mInflater;
 		public SensorAdapter(Context context, Cursor c) {
             // llamamos al constructor indicando contexto, cursor y booleano que
@@ -132,7 +142,7 @@ public class InfoSensorsFragment extends Fragment {
                 //Si la vista ya existe, reciclamos, recuperamos el viewHolder asociado
 				holder =(ViewHolder) myview.getTag();
 			}
-			
+
 
 			//Cojo los datos del Helper para cada campo, y los guardo en un String
 			String percentatge_bateria = mycursor.getString(mycursor.getColumnIndex(Helper.Sensors.KEY_BATERIA));
@@ -154,7 +164,7 @@ public class InfoSensorsFragment extends Fragment {
 			int perbat = Integer.parseInt(percentatge_bateria);
             //por defecto, muestro imagen de bateria completamente cargada
 			int imagebateria = R.drawable.bateria5;
-			
+
 			Double n = (double)perbat/25;
 			int p = n.intValue(); //cojo solo la parte entera, antes de los decimales
 			switch (p) {
@@ -173,7 +183,7 @@ public class InfoSensorsFragment extends Fragment {
 			default:
 				break;
 			}
-			
+
 			holder.bateria.setImageDrawable(getResources().getDrawable(imagebateria));
 
             //muestra imagen segun si estado de gas es ok o wrong
@@ -196,9 +206,8 @@ public class InfoSensorsFragment extends Fragment {
 			holder.cuantaluz.setText(cantidadluz);
 			holder.cuantatemperatura.setText(cantidadtemperatura);
 			holder.numerosensor.setText(sensornumero);
-			
-		}
 
+		}
 
 		
 	}

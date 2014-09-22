@@ -102,34 +102,7 @@ public class MainActivity extends SherlockFragmentActivity {
                 ft.replace(R.id.contenidor, fragment); //contenedor es el id del layout xml del activity_main
             }
     	}
-    /**
-    }   
-    //LOADERS
-    private class DatabaseCursorLoaderCallback implements LoaderCallbacks<Cursor>{
 
-		@Override
-		public android.support.v4.content.Loader<Cursor> onCreateLoader( //inicialitza els loaders, de moment en tinc 1
-				int arg0, Bundle arg1) {
-
-			CursorLoader cl = new CursorLoader(getApplication(), PatologiaProvider.URI_USER,
-					new String[]{User._ID,User.KEY_NAME,User.KEY_SURNAME,User.KEY_AGE,User.KEY_ADDRESS,User.KEY_PHONE, User.KEY_EMAIL,User.KEY_NOTES},
-					null, null, null);
-
-			return cl;
-		}
-
-		@Override
-		public void onLoadFinished( //quan sha acabat la lectura de la BBDD
-				android.support.v4.content.Loader<Cursor> arg0, Cursor arg1) { //em retorna un cursor
-			adapter.swapCursor(arg1);//actualitza el cursor del adapter, fa q ladapter es mostri en pantalla
-		
-		}
-		@Override
-		public void onLoaderReset(android.support.v4.content.Loader<Cursor> arg0) { //quan torna a comen�ar
-		//elimino el cursor antic
-		adapter.swapCursor(null);
-		}
-		**/
     }
 
   

@@ -27,7 +27,6 @@ public class App extends Application {
 	/**
 	 * Metode que comprueba la conexion a internet. Lo uso para comprobar en el SyncService (por si puedo hacer un CallServer)
 	 * y en ActivityLogin(para que em muestre un toast)
-	 * AFEGIRLO AMB TOAST A CADA ACTIVITY???????????????????????
 	 * @return
 	 */
 	public boolean verificaConexion() {

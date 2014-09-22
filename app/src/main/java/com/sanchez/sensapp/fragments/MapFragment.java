@@ -36,10 +36,10 @@ import java.util.ArrayList;
 public class MapFragment extends SherlockFragment {
 	private Cursor cursor;
     private LoaderManager.LoaderCallbacks<Cursor> callback;
-    //double pixelMetroX;
-    //double pixelMetroY;
     private View view;
-	
+
+    //pixelMetroX=(610/(13.6*1000));
+    //pixelMetroY=(408/(5.6*1000));
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -51,16 +51,7 @@ public class MapFragment extends SherlockFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //cursorloader
-       // callback = new	miCursorLoaderCallback();
-       /// getActivity().getSupportLoaderManager().initLoader(1, null, callback);
-      //  RelativeLayout image = (RelativeLayout)getActivity().findViewById(R.id.contenedorMapa);
-
-        //pixelMetroX=(610/(13.6*1000));
-        //pixelMetroY=(408/(5.6*1000));
-
-        //a cada loader li dono una id diferente, pq cada fragment te un loader propi, i es diferencien per aquesta id
-        //aquest loader sera 15
+        //La id de este loader sera 15
         callback = new	miCursorLoaderCallback();
         getActivity().getSupportLoaderManager().initLoader(15, null, callback);
 
@@ -70,23 +61,29 @@ public class MapFragment extends SherlockFragment {
 
         @Override
         public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
+            //creamos CursorLoader con su constructor.
+            // Le pasamos lo que el SensorsProvider necesita, el contexto, la URI donde se encuentra la
+            // info de sensores, y las columnas a devolver. Devuelve este CursorLoader creado
             String[] columnes = new String []{Sensors.KEY_ID,Sensors.KEY_BATERIA,Sensors.KEY_GAS,Sensors.KEY_AGUA,Sensors.KEY_LUZ,Sensors.KEY_TEMPERATURA,Sensors.KEY_POSICIO};
             return new android.support.v4.content.CursorLoader(getActivity(), SensorsProvider.URI_SENSORS,
                     columnes, null, null, null);
         }
 
         @Override
-        public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) { //arg1 es el resultat de  SensorsProvider.URI_SENSORS , es a dir el contingut de la BD
+        public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
+            //cuando termina la carga, los datos estan disponibles en el cursor para ser usados.
+            // Cambiamos por el nuevo cursor asociandolo al adapter (El framework se encargará de
+            // cerrar el antiguo cursor en el retorno.)
             cursor = arg1;
+            //arg1 es el resultado de  SensorsProvider.URI_SENSORS , es decir el contenido de la BD
             positions();
         }
 
         @Override
         public void onLoaderReset(Loader<Cursor> arg0) {
+            // Si los datos no estan disponibles, remplaza el contenido con un cursor vacío.
             cursor = null;
         }
-
-
     }
 
     private void positions(){
@@ -104,19 +101,20 @@ public class MapFragment extends SherlockFragment {
     }
 
 
-    @Override
+   @Override
     public void onResume() {
         super.onResume();
 
-        GoogleMapFragment f = new GoogleMapFragment();
+       /* GoogleMapFragment f = new GoogleMapFragment();
+
+       //obtengo el numero de usuario de la base de datos y guardo en cursor
         BBDD bbdd = new BBDD(getActivity());
         bbdd.open();
         Cursor c = bbdd.getUser();
-
         c.moveToFirst();
-
+        //de este usuario, mediante el Helper obtengo su dirección
         String address = c.getString(c.getColumnIndex(Helper.User.KEY_ADDRESS));
-
+        //transformo el string en (lat, long)
         Geocoder coder = new Geocoder(getActivity());
         try {
             ArrayList<Address> adresses = (ArrayList<Address>) coder.getFromLocationName(address, 1);
@@ -126,14 +124,13 @@ public class MapFragment extends SherlockFragment {
                 double latitude = add.getLatitude();
                 LatLng latLng = new LatLng(latitude,longitude);
                 f.setGps(latLng);
-
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         bbdd.close();
-        ((SherlockFragmentActivity)getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,f).commit();
+        ((SherlockFragmentActivity)getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,f).commit();*/
     }
 
     @Override
@@ -212,7 +209,7 @@ public class MapFragment extends SherlockFragment {
                 }
 			}
 		}
-		//aqui connectarem a BBDD i recuperarme la info dls sensors itb de ladre�a
+		//aqui connectarem a BBDD i recuperarme la info dls sensors itb de ladresa
 	
 
 }

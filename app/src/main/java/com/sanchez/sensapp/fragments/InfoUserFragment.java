@@ -16,7 +16,7 @@ import com.sanchez.sensapp.basedades.BBDD;
 import com.sanchez.sensapp.basedades.Helper;
 import com.sanchez.sensapp.basedades.Helper.User;
 import com.sanchez.sensapp.basedades.SensorsProvider;
-
+//Este fragment muestra los datos del usuario,así como el estado de la batería del sensor portátil.
 public class InfoUserFragment extends Fragment {
 	TextView nametv;
 	TextView surnametv;
@@ -50,7 +50,8 @@ public class InfoUserFragment extends Fragment {
 		phonetv = (TextView) getActivity().findViewById(R.id.phone);
 		emailtv = (TextView) getActivity().findViewById(R.id.email);
 		notestv = (TextView) getActivity().findViewById(R.id.notes);
-		
+
+		//constructor de la Base de datos
 		BBDD bd = new BBDD(getActivity());
 		bd.open();
 		Cursor c = bd.getUser();
@@ -66,12 +67,13 @@ public class InfoUserFragment extends Fragment {
 			notestv.setText(getString(R.string.iu_notes) +c.getString(c.getColumnIndex(Helper.User.KEY_NOTES)));
 		}
 		bd.close();
-		c.close();	
+		c.close();
+
+        //el estado de la bateria se encuentra en otra tabla, uso un cursor diferente con el SensorsProvider
 		ImageView battery = (ImageView)getActivity().findViewById(R.id.bateriauser);
 		Cursor cursor =getActivity().getContentResolver().query(SensorsProvider.URI_MOBILESENSOR, null, null, null, null);
 		cursor.moveToFirst();
-		
-		
+
 		if( cursor.getCount() > 0){
 			String bateria = cursor.getString(cursor.getColumnIndex(Helper.Sensors.KEY_BATERIA));
 			bateria =bateria.substring(0,bateria.length()-1); //elimino el % que retorna el php
